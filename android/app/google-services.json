@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "231832411118",
+    "project_id": "tech-emcees-sih-2024",
+    "storage_bucket": "tech-emcees-sih-2024.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:231832411118:android:017aa300ad6796626dccff",
+        "android_client_info": {
+          "package_name": "com.example.sih_1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBm5OcUOZ1aMzeL-WSFwWOSizTSqOMCpWg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
