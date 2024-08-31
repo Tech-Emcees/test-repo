@@ -78,7 +78,7 @@ class _MyAppState extends State<MyApp> {
                     ),
                   ),
                   SizedBox(
-                    width: 80,
+                    width: 50,
                     child: IconButton(
                       onPressed: () async {
                         final id =
