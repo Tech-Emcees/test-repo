@@ -1,6 +1,7 @@
 import 'package:flick_video_player/flick_video_player.dart';
 import 'package:flutter/material.dart';
 import 'package:sih_1/service.dart';
+import 'package:sih_1/speech2text.dart';
 import 'package:video_player/video_player.dart';
 
 void main() {
@@ -108,6 +109,8 @@ class _MyAppState extends State<MyApp> {
                   ),
                 ],
               ),
+              const SizedBox(height: 10,),
+              const Speech2text(),
 
 //------------------------------------------------------------------------------
 
