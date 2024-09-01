@@ -3,7 +3,8 @@ import 'package:speech_to_text/speech_recognition_result.dart';
 import 'package:speech_to_text/speech_to_text.dart';
 
 class Speech2text extends StatefulWidget {
-  const Speech2text({super.key});
+  final TextEditingController lastWords;
+  const Speech2text({super.key, required this.lastWords});
 
   @override
   State<Speech2text> createState() => _Speech2textState();
@@ -12,7 +13,6 @@ class Speech2text extends StatefulWidget {
 class _Speech2textState extends State<Speech2text> {
   final SpeechToText _speechToText = SpeechToText();
   bool _speechEnabled = false;
-  String _lastWords = '';
 
   @override
   void initState() {
@@ -21,16 +21,17 @@ class _Speech2textState extends State<Speech2text> {
   }
 
   void _initSpeech() async {
-  _speechEnabled = await _speechToText.initialize(
-    onError: (error) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Speech recognition not available: ${error.errorMsg}')),
-      );
-    },
-  );
-  setState(() {});
-}
-
+    _speechEnabled = await _speechToText.initialize(
+      onError: (error) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+              content:
+                  Text('Speech recognition not available: ${error.errorMsg}')),
+        );
+      },
+    );
+    setState(() {});
+  }
 
   void _startListening() async {
     await _speechToText.listen(onResult: _onSpeechResult);
@@ -44,7 +45,7 @@ class _Speech2textState extends State<Speech2text> {
 
   void _onSpeechResult(SpeechRecognitionResult result) {
     setState(() {
-      _lastWords = result.recognizedWords;
+      widget.lastWords.text = result.recognizedWords;
     });
   }
 
@@ -54,11 +55,12 @@ class _Speech2textState extends State<Speech2text> {
       width: 300,
       height: 40,
       child: ElevatedButton(
-          onPressed: _speechToText.isNotListening ? _startListening : _stopListening,
+          onPressed:
+              _speechToText.isNotListening ? _startListening : _stopListening,
           style: ElevatedButton.styleFrom(backgroundColor: Colors.blue.shade50),
           child: Text(
             _speechToText.isListening
-                ? _lastWords
+                ? widget.lastWords.text
                 : _speechEnabled
                     ? '🎙️ Tap the microphone to start listening...'
                     : 'Speech not available',

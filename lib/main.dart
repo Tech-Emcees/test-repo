@@ -20,6 +20,8 @@ void main() async {
 
 final _formKey = GlobalKey<FormState>();
 
+final TextEditingController _usernameController = TextEditingController();
+
 class MyApp extends StatefulWidget {
   const MyApp({super.key});
 
@@ -30,8 +32,6 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   String type = '';
   late FlickManager flickManager;
-
-  final TextEditingController _usernameController = TextEditingController();
 
   dynamic model;
   dynamic imageUrl;
@@ -159,8 +159,9 @@ class _MyAppState extends State<MyApp> {
                   ),
                 ],
               ),
-              const SizedBox(height: 10,),
-              const Speech2text(),
+              const SizedBox(height: 10),
+
+              Speech2text(lastWords: _usernameController),
 
 //------------------------------------------------------------------------------
 
