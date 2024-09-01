@@ -8,6 +8,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:path/path.dart' as path;
 import 'package:sih_1/button.dart';
 import 'package:sih_1/service.dart';
+import 'package:sih_1/speech2text.dart';
 import 'package:video_player/video_player.dart';
 
 void main() async {
@@ -158,6 +159,8 @@ class _MyAppState extends State<MyApp> {
                   ),
                 ],
               ),
+              const SizedBox(height: 10,),
+              const Speech2text(),
 
 //------------------------------------------------------------------------------
 
