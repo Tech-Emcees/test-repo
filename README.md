@@ -1,16 +1,18 @@
-# sih_1
+# Test Repo
+A simple flutter application that generates 3D model from text, voice and image inputs.
 
-A new Flutter project.
+## Build Instructions
+1. Clone the repository :
+```
+git clone https://github.com/Tech-Emcees/test-repo.git
+```
 
-## Getting Started
+2. Install all the packages :
+```
+flutter pub get
+```
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+3. Run in development :
+```
+flutter run
+```
